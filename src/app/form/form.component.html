@@ -1,0 +1,13 @@
+<!-- src/app/form/form.component.html -->
+<div>
+    <form #urlForm="ngForm" (ngSubmit)="onSubmit(urlForm.value.url)">
+        <label for="urlInput">Enter URL:</label>
+        <input type="text" id="urlInput" name="url" ngModel required>
+        <button type="submit" [disabled]="!urlForm.form.valid">Submit</button>
+    </form>
+</div>
+
+<div>
+    <h3>Submitted URL:</h3>
+    <div>{{ submittedUrl }}</div>
+</div>
